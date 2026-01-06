@@ -47,7 +47,7 @@ export default function SignupPage() {
         </div>
       </div>
 
-      <div className="footer">Made with ❤️ by Team Asparagus</div>
+      <div className="footer">Made with ❤️ by Team Featherflow</div>
     </div>
   );
 }

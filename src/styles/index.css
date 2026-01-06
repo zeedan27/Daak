@@ -1,0 +1,166 @@
+.index-page {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("/assets/images/daak-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.index-page .glass-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.index-page .glass-header .left,
+.index-page .glass-header .right {
+  display: flex;
+  align-items: center;
+}
+
+.index-page .header-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  margin: 0 0.3rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.index-page .header-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.index-page .header-logo {
+  height: 32px;
+  margin: 0 0.5rem;
+}
+
+.index-page .daak-title {
+  font-family: 'Noto Serif Bengali', serif;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.index-page .card {
+  background: linear-gradient(160deg, rgba(183, 28, 28, 0.4), rgba(27, 94, 32, 0.4));
+  padding: 45px 30px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  width: 310px;
+  animation: fadeIn 0.9s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  margin-top: 5rem;
+}
+
+.index-page .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: skewX(-25deg);
+  transition: 1s ease;
+}
+
+.index-page .card:hover::before {
+  left: 125%;
+}
+
+.index-page .logo {
+  width: 65px;
+  margin-bottom: 10px;
+}
+
+.index-page h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Noto Serif Bengali', serif;
+}
+
+.index-page p {
+  font-size: 0.92rem;
+  color: #f1f1f1;
+  margin-bottom: 30px;
+}
+
+.index-page .btn {
+  width: 100%;
+  padding: 13px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.25s ease;
+}
+
+.index-page .btn.login {
+  background-color: #000;
+  color: white;
+}
+
+.index-page .btn.login:hover {
+  background-color: #222;
+  box-shadow: 0 0 10px #ffffffaa;
+}
+
+.index-page .btn.signup {
+  background-color: white;
+  color: #000;
+}
+
+.index-page .btn.signup:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px #ffffff88;
+}
+
+.index-page .footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.8rem;
+  color: #ffffffaa;
+  text-align: center;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile-only */
+@media (max-width: 500px) {
+  .index-page .card {
+    width: 90%;
+  }
+}

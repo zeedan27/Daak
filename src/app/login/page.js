@@ -78,7 +78,7 @@ const handlePasswordReset = async (e) => {
         </div>
 
         <div className="login-credit">
-          Made with ❤️ by Team Asparagus
+          Made with ❤️ by Team Featherflow
         </div>
       </div>
     </div>
