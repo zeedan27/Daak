@@ -21,7 +21,7 @@ export const login = async (email, password) => {
 };
 
 // SIGNUP FUNCTION
-export const signup = async (name, email, password) => {
+export const signUpUser = async (name, email, password) => {
   try {
     const cred = await createUserWithEmailAndPassword(auth, email, password);
 
