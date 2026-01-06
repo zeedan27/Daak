@@ -8,6 +8,7 @@ import "@/styles/heatmap.css";
 import "@/styles/report.css";
 import "@/styles/public-reports.css";
 import "@/styles/report-detail.css";
+import "@/styles/contacts.css";
 
 
 const geistSans = Geist({

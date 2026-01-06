@@ -1,0 +1,95 @@
+.contacts-page {
+  min-height: 100vh;
+  background: url("/assets/images/daak-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.contacts-card {
+  background: linear-gradient(
+    160deg,
+    rgba(183, 28, 28, 0.5),
+    rgba(27, 94, 32, 0.5)
+  );
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  text-align: center;
+}
+
+.contacts-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+.contact-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-row input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+.contact-row input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-row button {
+  background: #2196f3;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.contact-row button:hover {
+  background: #1976d2;
+}
+
+.contact-row .danger {
+  background: #d32f2f;
+}
+
+.contact-row .danger:hover {
+  background: #b71c1c;
+}
+
+.status {
+  margin-top: 1rem;
+}
+
+.contacts-footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ffffffaa;
+}
+
+/* ✅ MOBILE-ONLY CHANGES */
+@media (max-width: 700px) {
+  .contact-row {
+    flex-direction: column;
+  }
+
+  .contact-row button {
+    width: 100%;
+  }
+}
