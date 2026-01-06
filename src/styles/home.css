@@ -1,0 +1,94 @@
+.home-page {
+  min-height: 100vh;
+  background: url("/assets/images/daak-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-page .home-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.home-page .btn {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: white;
+  border: 2px solid white;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.home-page .btn:hover {
+  background: #b71c1c;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 50, 50, 0.7);
+}
+
+.home-page .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 10;
+}
+
+.home-page #adminBtn {
+  background: orange;
+  color: white;
+  width: 300px;
+  height: 60px;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 1rem;
+}
+
+.home-page .logout-btn {
+  margin-top: 1rem;
+  background: red;
+  color: white;
+}
+
+.home-page .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ffffffaa;
+  padding: 1rem;
+}
+
+/* 📱 Mobile only */
+@media (max-width: 700px) {
+  .home-page .home-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .btn {
+    width: 100%;
+  }
+
+  .home-page #adminBtn {
+    width: 100%;
+  }
+}

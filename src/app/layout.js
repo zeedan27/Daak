@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import "@/styles/login.css";
 import "@/styles/signup.css";
 import "@/styles/index.css";
+import "@/styles/home.css";
 
 
 const geistSans = Geist({

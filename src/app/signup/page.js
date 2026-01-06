@@ -1,9 +1,11 @@
 "use client";
 
 import { signUpUser } from "@/firebase/auth";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function SignupPage() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -20,6 +22,8 @@ export default function SignupPage() {
 
     if (!result.success) {
       setError(result.message);
+    } else {
+      router.push("/home");
     }
 
     setLoading(false);
