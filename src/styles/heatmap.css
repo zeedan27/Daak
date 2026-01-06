@@ -1,0 +1,33 @@
+.heatmap-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.heatmap-controls {
+  padding: 0.5rem;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.heatmap-controls select,
+.heatmap-controls button {
+  padding: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.heatmap-map {
+  flex: 1;
+  width: 100%;
+  min-height: 320px;
+}
+
+@media (max-width: 700px) {
+  .heatmap-controls {
+    font-size: 0.85rem;
+  }
+}
