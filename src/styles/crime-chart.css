@@ -1,0 +1,11 @@
+/* Styles for the crime trends chart */
+.chart-container {
+  height: 220px;
+  width: 100%;
+  position: relative;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
