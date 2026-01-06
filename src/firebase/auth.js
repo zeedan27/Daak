@@ -8,20 +8,15 @@ export const login = async (email, password) => {
   try {
     const cred = await signInWithEmailAndPassword(auth, email, password);
     await cred.user.reload();
-    console.log("Email verified status:", cred.user.emailVerified); // Debugging
-    if (cred.user.emailVerified) {
-      alert("Login successful!");
-      // Redirect logic here
-      return true;
-    } else {
-      alert("Please verify your email before logging in.");
+
+    if (!cred.user.emailVerified) {
       await signOut(auth);
-      return false;
+      return { success: false, message: "Please verify your email before logging in." };
     }
+
+    return { success: true };
   } catch (error) {
-    alert("Login error: " + error.message);
-    console.error("Login error:", error);
-    return false;
+    return { success: false, message: error.message };
   }
 };
 
@@ -29,33 +24,32 @@ export const login = async (email, password) => {
 export const signup = async (name, email, password) => {
   try {
     const cred = await createUserWithEmailAndPassword(auth, email, password);
+
     await setDoc(doc(firestore, 'users', cred.user.uid), {
       fullName: name,
-      email: email,
+      email,
       createdAt: new Date(),
     });
+
     await sendEmailVerification(cred.user);
-    alert("Account created! A verification email has been sent. Please verify your email before logging in.");
     await signOut(auth);
-    return true;
+
+    return {
+      success: true,
+      message: "Account created! Verification email sent."
+    };
   } catch (error) {
-    alert("Signup error: " + error.message);
-    console.error("Signup error:", error);
-    return false;
+    return { success: false, message: error.message };
   }
 };
 
-// FORGOT PASSWORD FUNCTION
+// FORGOT PASSWORD
 export const sendPasswordReset = async (email) => {
-  if (!email) {
-    alert("Please enter your email first.");
-    return;
-  }
   try {
     await sendPasswordResetEmail(auth, email);
-    alert("Password reset email sent. Check your inbox.");
+    return { success: true, message: "Password reset email sent." };
   } catch (error) {
-    alert("Error: " + error.message);
-    console.error("Reset error:", error);
+    return { success: false, message: error.message };
   }
 };
+

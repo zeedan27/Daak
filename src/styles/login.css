@@ -1,0 +1,125 @@
+/* =========================
+   LOGIN PAGE WRAPPER
+   ========================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/images/daak-bg.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+
+.login-page .login-card {
+  background: linear-gradient(
+    160deg,
+    rgba(183, 28, 28, 0.6),
+    rgba(27, 94, 32, 0.6)
+  );
+  backdrop-filter: blur(20px);
+  padding: 2.5rem;
+  border-radius: 25px;
+  max-width: 420px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* =========================
+   TITLE
+   ========================= */
+
+.login-page .h2-title {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   FORM
+   ========================= */
+
+.login-page .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.login-page .login-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 0.75rem;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-page .login-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================
+   BUTTON
+   ========================= */
+
+.login-page .login-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 0.8rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.login-page .login-btn:hover {
+  background-color: #1976d2;
+}
+
+/* =========================
+   FOOTER LINKS
+   ========================= */
+
+.login-page .login-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.login-page .login-footer a {
+  color: #90caf9;
+  text-decoration: none;
+}
+
+.login-page .login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CREDIT
+   ========================= */
+
+.login-page .login-credit {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* =========================
+   MOBILE ONLY
+   ========================= */
+
+@media (max-width: 700px) {
+  .login-page .login-card {
+    padding: 2rem 1.5rem;
+  }
+}
