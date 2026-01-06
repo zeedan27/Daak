@@ -1,0 +1,276 @@
+/* ===============================
+   Report Crime Page (Scoped)
+   Root wrapper: .report-page
+   =============================== */
+
+.report-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background image must be in /public/assets */
+  background: url("/assets/images/daak-bg.png") no-repeat center center fixed;
+  background-size: cover;
+
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.report-page .report-card {
+  background: linear-gradient(
+    160deg,
+    rgba(183, 28, 28, 0.6),
+    rgba(27, 94, 32, 0.6)
+  );
+  backdrop-filter: blur(20px);
+
+  padding: 2rem;
+  border-radius: 25px;
+  max-width: 593px;
+  width: 100%;
+  color: white;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.report-page .report-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-25deg);
+  transition: 1s ease;
+}
+
+.report-page .report-card:hover::before {
+  left: 125%;
+}
+
+/* Title */
+.report-page .report-card h2 {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* -------- FORM LAYOUT (Fix messy layout) -------- */
+.report-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.report-page label {
+  display: block;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+/* Fields */
+.report-page input,
+.report-page select,
+.report-page textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  background: transparent;
+  border: 1px solid white;
+  padding: 0.7rem;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.report-page textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.report-page input::placeholder,
+.report-page textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Select dropdown theme */
+.report-page select {
+  background-color: #1b5e20;
+  color: white;
+  border: 1px solid white;
+}
+
+.report-page select option {
+  background-color: #1b5e20;
+  color: white;
+}
+
+/* File input */
+.report-page input[type="file"] {
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+.report-page input[type="file"]::file-selector-button {
+  background-color: #b71c1c;
+  color: white;
+  border: 2px solid white;
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s;
+}
+
+.report-page input[type="file"]::file-selector-button:hover {
+  background-color: #d32f2f;
+  box-shadow: 0 0 12px rgba(255, 80, 80, 0.7);
+  border-color: #fff;
+}
+
+/* Map */
+.report-page #reportMap {
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Buttons */
+.report-page button {
+  background-color: #2196f3;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.report-page button:hover {
+  background-color: #1976d2;
+}
+
+/* Locate button */
+.report-page .locate-button {
+  width: fit-content;
+  background-color: #00cc66;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.report-page .locate-button:hover {
+  background-color: #00a356;
+}
+
+/* Switch */
+.report-page .switch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+}
+
+.report-page .switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.report-page .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.report-page .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.report-page .slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  top: 3px;
+  background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+  border-radius: 50%;
+  transition: 0.4s;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.report-page .switch input:checked + .slider {
+  background-color: #00cc66;
+}
+
+.report-page .switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* Leaflet geocoder readability */
+.report-page .leaflet-control-geocoder-form input {
+  color: black !important;
+  background-color: white !important;
+  border: 1px solid #ccc !important;
+}
+
+.report-page .leaflet-control-geocoder-results {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Footer (optional if your page renders it) */
+.report-page .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ffffffaa;
+  padding: 1rem;
+  background: transparent;
+  z-index: 100;
+}
+
+/* ===============================
+   MOBILE ONLY (do not affect desktop)
+   =============================== */
+@media (max-width: 700px) {
+  .report-page {
+    padding: 1rem;
+  }
+
+  .report-page .report-card {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  .report-page #reportMap {
+    height: 220px;
+  }
+
+  .report-page .locate-button {
+    width: 100%;
+  }
+}

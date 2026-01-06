@@ -5,6 +5,7 @@ import "@/styles/signup.css";
 import "@/styles/index.css";
 import "@/styles/home.css";
 import "@/styles/heatmap.css";
+import "@/styles/report.css";
 
 
 const geistSans = Geist({
