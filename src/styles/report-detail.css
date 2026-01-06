@@ -1,0 +1,56 @@
+.report-detail-page {
+  padding: 1rem;
+  background: #f7f7f7;
+}
+
+.report-detail-page .container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.report-detail-page .tag {
+  background: #004aad;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.report-detail-page .tag.verified { background: #23a525; }
+.report-detail-page .tag.rejected { background: #c32a2a; }
+
+.report-detail-page .meta {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.report-detail-page #map {
+  height: 250px;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.report-detail-page .tips {
+  margin-top: 2rem;
+}
+
+.report-detail-page .tip {
+  border-top: 1px solid #eee;
+  padding: 0.75rem 0;
+}
+
+.report-detail-page .vote {
+  cursor: pointer;
+  margin: 0 6px;
+}
+
+/* ✅ MOBILE-ONLY */
+@media (max-width: 700px) {
+  .report-detail-page #map {
+    height: 180px;
+  }
+}
