@@ -62,6 +62,29 @@
   margin-top: 1rem;
 }
 
+.home-page #policeBtn {
+  background: #1a2b4a;
+  color: white;
+  width: 300px;
+  height: 60px;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.home-page #policeBtn:hover {
+  background: #0f1a2e;
+  box-shadow: 0 0 15px rgba(26, 43, 74, 0.5);
+}
+
+.home-page .police-btn {
+  width: 300px !important;
+  height: 60px !important;
+}
+
 .home-page .logout-btn {
   margin-top: 1rem;
   background: red;
@@ -90,5 +113,13 @@
 
   .home-page #adminBtn {
     width: 100%;
+  }
+
+  .home-page #policeBtn {
+    width: 100%;
+  }
+
+  .home-page .police-btn {
+    width: 100% !important;
   }
 }

@@ -1,0 +1,98 @@
+/* PAGE WRAPPER */
+.distress-page {
+  min-height: 100vh;
+  background: url("/assets/images/daak-bg.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.distress-card {
+  position: relative;
+  background: linear-gradient(
+    160deg,
+    rgba(183, 28, 28, 0.6),
+    rgba(27, 94, 32, 0.6)
+  );
+  backdrop-filter: blur(15px);
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.distress-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 1s ease;
+}
+
+.distress-card:hover::before {
+  left: 125%;
+}
+
+/* BUTTON */
+.panic-button {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: red;
+  box-shadow: 0 0 30px red;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.panic-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 50px red;
+}
+
+/* TEXT */
+.countdown {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: yellow;
+}
+
+/* CANCEL */
+.cancel-button {
+  margin-top: 10px;
+  background: white;
+  color: red;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 📱 MOBILE ONLY */
+@media (max-width: 700px) {
+  .distress-card {
+    padding: 30px 20px;
+  }
+
+  .panic-button {
+    width: 100px;
+    height: 100px;
+  }
+}

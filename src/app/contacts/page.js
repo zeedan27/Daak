@@ -96,7 +96,7 @@ export default function ContactsPage() {
       </div>
 
       <footer className="contacts-footer">
-        Made with ❤️ by Team Asparagus
+        Made with ❤️ by Team Featherflow
       </footer>
     </div>
   );

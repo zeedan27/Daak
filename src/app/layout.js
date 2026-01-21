@@ -9,6 +9,10 @@ import "@/styles/report.css";
 import "@/styles/public-reports.css";
 import "@/styles/report-detail.css";
 import "@/styles/contacts.css";
+import "@/styles/chatbot.css";
+import "@/styles/distress.css";
+import "@/styles/police.css";
+import "leaflet/dist/leaflet.css";
 
 
 const geistSans = Geist({

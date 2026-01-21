@@ -11,6 +11,7 @@ export default function HomePage() {
   const router = useRouter();
   const [userName, setUserName] = useState("Loading...");
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isPolice, setIsPolice] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function HomePage() {
         const data = snap.data();
         setUserName(data.fullName || "User");
         setIsAdmin(data.role === "admin");
+        setIsPolice(data.role === "police");
       } else {
         setUserName("User");
       }
@@ -50,6 +52,11 @@ export default function HomePage() {
   const goAdmin = () => {
     if (isAdmin) router.push("/admin");
     else alert("Access denied. You are not an admin.");
+  };
+
+  const goPolicePortal = () => {
+    if (isPolice) router.push("/police");
+    else alert("Access denied. Only police officers can access this portal.");
   };
 
   return (
@@ -83,6 +90,12 @@ export default function HomePage() {
           <Link href="/chatbot" className="btn">Chatbot</Link>
           <Link href="/heatmap" className="btn">Heatmap</Link>
         </div>
+
+        {isPolice && (
+          <button id="policeBtn" onClick={goPolicePortal} className="btn police-btn">
+            🛡️ Police Portal
+          </button>
+        )}
 
         {isAdmin && (
           <button id="adminBtn" onClick={goAdmin}>
